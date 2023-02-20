@@ -1,4 +1,4 @@
-// import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 // import { getRedirectResult } from "firebase/auth";
 // import {
 //   auth,
