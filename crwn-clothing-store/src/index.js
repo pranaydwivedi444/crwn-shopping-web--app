@@ -7,19 +7,27 @@ import reportWebVitals from "./reportWebVitals";
 import { UserProvider } from "./contexts/user.context";
 import { CategoriesProvider } from "./contexts/categories.context";
 import { CartProvider } from "./contexts/cart.context";
-
+import { Provider } from "react-redux";
+import { Store } from "redux";
+import { store } from "./Store/store";
+import { Elements } from "@stripe/react-stripe-js";
+import { options, stripePromise } from "./utility/stripe";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <UserProvider>
+          <CategoriesProvider>
+            <CartProvider>
+              <Elements stripe={stripePromise}>
+                <App />
+              </Elements>
+            </CartProvider>
+          </CategoriesProvider>
+        </UserProvider>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

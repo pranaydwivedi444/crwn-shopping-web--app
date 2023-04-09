@@ -54,11 +54,32 @@ export const CartContext = createContext({
   total: 0,
 });
 
+const INITIAL_STATE = {
+  isCartOpen: false,
+  cartItems: [],
+  total: 0,
+};
+
+// const cartReducer = (state, action) => {
+//   const { type, payload } = action;
+//   switch (type) {
+//     case "SET_CART_ITEMS":
+//       break;
+
+//     default:
+//       throw new Error(`unhandled type of ${type} in cartReducer`);
+//       break;
+//   }
+// };
+
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [total, setTotal] = useState(0);
 
   const [cartItems, setCartItems] = useState([]);
+  // const updateCardItemsReducer = (newCartItems)=>{
+
+  // }
 
   const addItemToCart = (productToAdd) => {
     const updatedCartItems = addItemCart(productToAdd, cartItems);
