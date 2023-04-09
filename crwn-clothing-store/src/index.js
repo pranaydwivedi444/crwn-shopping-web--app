@@ -10,7 +10,8 @@ import { CartProvider } from "./contexts/cart.context";
 import { Provider } from "react-redux";
 import { Store } from "redux";
 import { store } from "./Store/store";
-
+import { Elements } from "@stripe/react-stripe-js";
+import { options, stripePromise } from "./utility/stripe";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -19,7 +20,9 @@ root.render(
         <UserProvider>
           <CategoriesProvider>
             <CartProvider>
-              <App />
+              <Elements stripe={stripePromise}>
+                <App />
+              </Elements>
             </CartProvider>
           </CategoriesProvider>
         </UserProvider>
