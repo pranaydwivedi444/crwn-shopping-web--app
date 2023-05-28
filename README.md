@@ -2,7 +2,7 @@
 crwn shopping app for learning
 # CRWN Clothing
 Live link - https://crwn-clothing-ecommerce-store.netlify.app/
-CRWN Clothing is an e-commerce website built with React, Redux, Firebase, Stripe, and Sass. This project was created as part of the "Complete React Developer in 2021" course by Andrei Neagoie and Yihua Zhang on Udemy.
+CRWN Clothing is an e-commerce website built with React, Redux, Firebase, Stripe, and Sass. 
 
 ## Features
 
